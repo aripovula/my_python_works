@@ -1,0 +1,27 @@
+2019-09-16T07:14:57  Welcome, you are now connected to log-streaming service. The default timeout is 2 hours. Change the timeout with the App Setting SCM_LOGSTREAM_TIMEOUT (in seconds). 
+2019-09-16T07:15:20.084 [Information] Executing 'Functions.QueueTrigger2' (Reason='This function was programmatically called via the host APIs.', Id=10adcaa8-4331-481e-9f63-88d7b52067c4)
+2019-09-16T07:15:20.307 [Information] JavaScript queue trigger function processed work item:  tesT1234
+2019-09-16T07:15:20.349 [Information] task -  { PartitionKey: { _: 'hometasks' },
+  RowKey: { _: 'A1568618120124' },
+  description: { _: 'tesT1234' },
+  dueDate: { _: 2015-07-20T00:00:00.000Z, '$': 'Edm.DateTime' } }
+2019-09-16T07:15:20.889 [Error] Executed 'Functions.QueueTrigger2' (Failed, Id=10adcaa8-4331-481e-9f63-88d7b52067c4)
+Result: Failure
+Exception: Error: The input authorization token can't serve the request. Please check that the expected payload is built as per the protocol, and check the key being used. Server used the following payload to sign: 'get
+dbs
+dbs/testDBTrig2
+mon, 16 sep 2019 07:15:20 gmt
+
+'
+ActivityId: 7506cb9e-d587-4ace-9e14-48ad7b37e222, Microsoft.Azure.Documents.Common/2.5.1
+Stack: Error: The input authorization token can't serve the request. Please check that the expected payload is built as per the protocol, and check the key being used. Server used the following payload to sign: 'get
+dbs
+dbs/testDBTrig2
+mon, 16 sep 2019 07:15:20 gmt
+
+'
+ActivityId: 7506cb9e-d587-4ace-9e14-48ad7b37e222, Microsoft.Azure.Documents.Common/2.5.1
+    at D:\home\site\wwwroot\node_modules\@azure\cosmos\dist\index.js:6389:39
+    at Generator.next (<anonymous>)
+    at fulfilled (D:\home\site\wwwroot\node_modules\tslib\tslib.js:107:62)
+    at process._tickCallback (internal/process/next_tick.js:68:7)
