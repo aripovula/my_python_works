@@ -1,37 +1,58 @@
 import math
 
-# PART 1
-# Call your print_volume function three times with different values for radius.
+def countdown(n):
+     if n <= 0:
+          print('Blastoff!')
+     else:
+          print(n)
+          countdown(n-1)
 
-def print_volume(r):
-    volume = 4 / 3 * math.pi * r ** 3
-    print(volume)
+# Write a new recursive function countup that expects a negative argument and counts “up” from that 
+# number. Output from running the function should look something like this:
 
-print_volume(30)    # prints    113097.33552923254
+# >>> countup(-3)
+# -3
+# -2
+# -1
+# Blastoff!
 
-print_volume(90)    # prints    3053628.0592892785
+def count_up(n):
+     if n >= 0:
+          print('Blastoff!')
+     else:
+          print(n)
+          count_up(n+1)
 
-print_volume(120)   # prints    7238229.473870883
+countdown(3)
+count_up(-3)
 
+# Write a Python program that gets a number using keyboard input. (Remember to use input for Python 3 but 
+# raw_input for Python 2.)
+# If the number is positive, the program should call countdown. If the number is negative, the program should 
+# call countup. Choose for yourself which function to call (countdown or countup) for input of zero.
+# Provide the following.
+# The code of your program.
+# Output for the following input: a positive number, a negative number, and zero.
+# An explanation of your choice for what to call for input of zero.
 
-# PART 2
-# Write your own function that illustrates a feature that you learned in this unit.
+start_point_str = input('Please type counter start point (must be integer) = ')
+start_point = int(start_point_str) # ideally we should verify that it is indeed an integer using try: except
+if start_point >= 0:    # if start_point == 0 call count_down
+    countdown(start_point)
+else:
+    count_up(start_point)
 
-# These functions perform pseudo-task of calculating log of product of 2 numbers and square root of third number
+# 2. Write your own unique Python program that has a runtime error. Do not copy the program from your textbook or the Internet. Provide the following.
 
-def get_product(param1, param2):     # params correspond to a and b in get_log10, but they do not have to be called a and b
-    return param1 * param2
+# The code of your program.
+# Output demonstrating the runtime error, including the error message.
+# An explanation of the error message.
+# An explanation of how to fix the error.
 
-def get_sqrt(param):    # param corresponds to c in get_log10, but it does not have to be called c
-    return math.sqrt(param)
+print(len(1234))
 
-def get_log10(a, b, c):
-    the_product = get_product(a, b)
-    the_sqrt = get_sqrt(c)
-    print ("Is product equal to sq. roots ?  ", the_product == the_sqrt) # prints "Is product equal to sq. roots ?   True"
-    return math.log10(the_product * the_sqrt)
-
-x = 20
-y = 5
-z = 10000
-print('Log10 of ', x, ' * ', y, ' * sq.root(', z, ') is ', get_log10(x, y, z)) # prints "Log10 of  20  *  5  * sq.root( 10000 ) is  4.0"
+# it prints
+# Traceback (most recent call last):
+#   File "/Users/myfamily/Documents/00CurWorks/AllCode/Python/Hello/u3learningGuide.py", line 52, in <module>
+#     print(len(1234))
+# TypeError: object of type 'int' has no len()
